@@ -1,0 +1,15 @@
+langchain-openai
+langchain_community
+psycopg2-binary
+pinecone-client
+langchain-pinecone
+langchain-cohere==0.3.1
+flask
+gunicorn
+pymupdf
+langdetect
+pypdf
+flask_cors
+python-dotenv
+unstructured
+docx2txt

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal RAG Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Personal RAG</h1>
+        <p>Your AI Assistant</p>
+      </div>
+
+      <div class="upload-section">
+        <h3>Upload Documents</h3>
+        <div class="file-input-wrapper">
+          <input type="file" id="file-upload" multiple accept=".pdf,.docx,.html" />
+          <label for="file-upload" class="file-label">
+            <span>Choose files...</span>
+          </label>
+        </div>
+        <button id="upload-btn" disabled>Upload</button>
+        <div id="upload-status"></div>
+      </div>
+
+      <div class="documents-section">
+        <h3>Knowledge Base</h3>
+        <div id="document-list">
+          <!-- Documents will be populated here -->
+          <div class="empty-state">No documents indexed.</div>
+        </div>
+      </div>
+
+      <div class="session-info">
+        <div class="session-id-wrapper">
+          <span class="label">Session ID:</span>
+          <span id="session-id">...</span>
+        </div>
+        <button id="reset-session">New Session</button>
+      </div>
+    </aside>
+
+    <main class="chat-area">
+      <div id="chat-window" aria-live="polite">
+        <div class="message bot">
+          Hello! I'm your Personal RAG Chatbot. Upload some documents to the left and ask me anything about them.
+        </div>
+      </div>
+
+      <form id="chat-form">
+        <div class="input-container">
+          <input id="message-input" autocomplete="off" placeholder="Ask a question about your documents..." />
+          <button id="send-btn" type="submit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+
+</html>
